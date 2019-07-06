@@ -1,0 +1,68 @@
+<style>
+  .page-wrap {
+      min-height: 100%;
+      min-width: 80%;
+      margin-top: 100px;
+      background-color: ;
+    }
+
+  .form-inputs {
+    max-width: 250px;
+    height: 100px;
+    font-size: 20px;
+  }
+
+  .input-block {border-radius: 5px;
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  .left {
+    margin-top: 10px;
+  }
+
+  div.description {
+    font-size: 15px;
+  }
+
+
+</style>
+
+
+
+<div class="container page-wrap ">
+  <div class="col-md-6 left">
+    <div class="description">
+      <h2>建立连接，共赢未来</h2>
+      <p>企业与人才，能找到彼此匹配的对方</p>
+      <h2>我们的优势</h2>
+      <p>专业化团队经验，职位面对全球.</p>
+      <h2>我们的服务</h2>
+      <p>一心为客户，一心为发展。</p>
+    </div>
+  </div>
+  <div class="col-md-6 right centered">
+    <div class="input-block">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+      </div>
+      <div class="form-inputs">
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "current-password" } %>
+      </div>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <div class="form-actions">
+
+        <%= f.button :submit, "登录" %>
+
+      </div>
+      <% end %>
+      <%= render "users/shared/links" %>
+    </div>
+  </div>
+</div>

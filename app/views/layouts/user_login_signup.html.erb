@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>真·24K Offer</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <style>
+      #signlog {
+        background-color: #FFECB3;
+      }
+    </style>
+
+  </head>
+  
+  <body id="signlog">
+    <div class="container-fluid">
+      <div class="row">
+          <%= render 'common/navbar1'%>
+      </div>
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+    </div>
+      <%= render 'common/footer'%>
+  </body>
+</html>
